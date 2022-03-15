@@ -13,7 +13,7 @@
     <%= f.label :job_application_id %>
 
     <!-- Input for job_application_id start -->
-    <%= f.text_field :job_application_id, class: "form-control" %>
+    <%= f.collection_select :job_application_id, JobApplication.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for job_application_id end -->
   </div>
   <!-- Label and input for job_application_id end -->
