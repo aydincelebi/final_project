@@ -1,6 +1,9 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
+  has_many   :job_categories,
+             :dependent => :destroy
+
   has_many   :interviews,
              :foreign_key => "application_id",
              :dependent => :destroy

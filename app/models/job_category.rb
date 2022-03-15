@@ -1,6 +1,8 @@
 class JobCategory < ApplicationRecord
   # Direct associations
 
+  belongs_to :job_application
+
   # Indirect associations
 
   # Validations
