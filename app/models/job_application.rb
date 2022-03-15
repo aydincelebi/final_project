@@ -5,6 +5,8 @@ class JobApplication < ApplicationRecord
 
   # Validations
 
+  validates :platform, :inclusion => { :in => [ "Kellogg Job Board", "Company Website" ]  }
+
   # Scopes
 
   def to_s

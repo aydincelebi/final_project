@@ -12,5 +12,7 @@ RSpec.describe JobApplication, type: :model do
 
     describe "Validations" do
 
+    it { should validate_inclusion_of(:platform).in_array([ "Kellogg Job Board", "Company Website" ]) }
+
     end
 end
