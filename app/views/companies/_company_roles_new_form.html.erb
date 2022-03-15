@@ -42,7 +42,7 @@
     <%= f.label :platform %>
 
     <!-- Input for platform start -->
-    <%= f.text_field :platform, class: "form-control" %>
+    <%= f.collection_select :platform, ApplicationWebsite.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for platform end -->
   </div>
   <!-- Label and input for platform end -->

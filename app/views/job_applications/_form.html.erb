@@ -120,7 +120,7 @@
 
     <%= f.label :platform %>
     <!-- Input for platform start -->
-    <%= f.number_field :platform, class: platform_class, placeholder: "Enter platform" %>
+    <%= f.collection_select :platform, ApplicationWebsite.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for platform end -->
     <% if platform_was_invalid %>
       <% job_application.errors.full_messages_for(:platform).each do |message| %>
