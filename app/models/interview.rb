@@ -5,6 +5,8 @@ class Interview < ApplicationRecord
 
   # Validations
 
+  validates :status, :presence => true
+
   validates :status, :inclusion => { :in => [ "pending", "rejected", "passed" ]  }
 
   validates :take_home, :inclusion => { :in => [ "0", "1" ]  }
