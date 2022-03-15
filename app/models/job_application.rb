@@ -5,6 +5,8 @@ class JobApplication < ApplicationRecord
 
   # Validations
 
+  validates :interest_level, :numericality => { :equal_to => 1 }
+
   validates :name, :presence => true
 
   validates :platform, :presence => true

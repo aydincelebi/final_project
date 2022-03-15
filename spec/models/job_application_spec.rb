@@ -12,6 +12,8 @@ RSpec.describe JobApplication, type: :model do
 
     describe "Validations" do
 
+    it { should validate_numericality_of(:interest_level).is_equal_to(1) }
+
     it { should validate_presence_of(:name) }
 
     it { should validate_presence_of(:platform) }
