@@ -8,6 +8,9 @@ class JobCategoryResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :job,
+             resource: JobTypeResource
+
   belongs_to :job_application
 
   # Indirect associations
