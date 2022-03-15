@@ -1,0 +1,83 @@
+<% was_validated = company.errors.any? %>
+
+<%= form_with(model: company, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = company.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+    <!-- Input for name start -->
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <!-- Input for name end -->
+    <% if name_was_invalid %>
+      <% company.errors.full_messages_for(:name).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for name end -->
+  <!-- Label and input for industry start -->
+  <div class="form-group">
+    <% industry_class = "form-control" %>
+    <% industry_was_invalid = company.errors.include?(:industry) %>
+
+    <% if was_validated %>
+      <% if industry_was_invalid %>
+        <% industry_class << " is-invalid" %>
+      <% else %>
+        <% industry_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :industry %>
+    <!-- Input for industry start -->
+    <%= f.text_field :industry, class: industry_class, placeholder: "Enter industry" %>
+    <!-- Input for industry end -->
+    <% if industry_was_invalid %>
+      <% company.errors.full_messages_for(:industry).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for industry end -->
+  <!-- Label and input for size start -->
+  <div class="form-group">
+    <% size_class = "form-control" %>
+    <% size_was_invalid = company.errors.include?(:size) %>
+
+    <% if was_validated %>
+      <% if size_was_invalid %>
+        <% size_class << " is-invalid" %>
+      <% else %>
+        <% size_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :size %>
+    <!-- Input for size start -->
+    <%= f.text_field :size, class: size_class, placeholder: "Enter size" %>
+    <!-- Input for size end -->
+    <% if size_was_invalid %>
+      <% company.errors.full_messages_for(:size).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for size end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
