@@ -7,6 +7,8 @@ class InterviewStyleResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :interview
+
   # Indirect associations
 
 end

@@ -9,6 +9,8 @@ class InterviewResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :interview_styles
+
   belongs_to :role,
              resource: JobApplicationResource,
              foreign_key: :application_id
