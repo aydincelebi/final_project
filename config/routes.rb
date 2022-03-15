@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :interview_styles
   resources :job_categories
   resources :categories
   resources :application_websites
