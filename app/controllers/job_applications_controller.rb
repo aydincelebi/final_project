@@ -3,7 +3,7 @@ class JobApplicationsController < ApplicationController
 
   # GET /job_applications
   def index
-    @job_applications = JobApplication.all
+    @job_applications = JobApplication.page(params[:page]).per(10)
   end
 
   # GET /job_applications/1

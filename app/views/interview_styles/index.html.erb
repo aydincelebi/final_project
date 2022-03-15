@@ -34,6 +34,10 @@
       <div class="list-group list-group-flush">
         <%= render collection: @interview_styles, partial: "list_item", as: :interview_style %>
       </div>
+      <div class="card-footer d-flex justify-content-center">
+        <%= paginate @interview_styles, theme: 'twitter-bootstrap-4' %>
+      </div>
+
     </div>
   </div>
 </div>

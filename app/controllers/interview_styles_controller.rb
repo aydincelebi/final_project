@@ -3,7 +3,7 @@ class InterviewStylesController < ApplicationController
 
   # GET /interview_styles
   def index
-    @interview_styles = InterviewStyle.all
+    @interview_styles = InterviewStyle.page(params[:page]).per(10)
   end
 
   # GET /interview_styles/1

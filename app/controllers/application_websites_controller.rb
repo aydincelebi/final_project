@@ -3,7 +3,7 @@ class ApplicationWebsitesController < ApplicationController
 
   # GET /application_websites
   def index
-    @application_websites = ApplicationWebsite.all
+    @application_websites = ApplicationWebsite.page(params[:page]).per(10)
   end
 
   # GET /application_websites/1
