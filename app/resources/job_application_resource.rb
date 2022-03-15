@@ -17,6 +17,9 @@ class JobApplicationResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :interviews,
+             foreign_key: :application_id
+
   belongs_to :firm,
              resource: CompanyResource,
              foreign_key: :company_id
