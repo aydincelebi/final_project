@@ -17,6 +17,10 @@ class JobApplicationResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :firm,
+             resource: CompanyResource,
+             foreign_key: :company_id
+
   # Indirect associations
 
 end

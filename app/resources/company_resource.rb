@@ -8,6 +8,9 @@ class CompanyResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :roles,
+             resource: JobApplicationResource
+
   # Indirect associations
 
 end
