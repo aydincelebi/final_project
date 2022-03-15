@@ -34,4 +34,6 @@ class JobApplicationResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :categories
+
 end
