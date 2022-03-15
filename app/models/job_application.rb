@@ -1,6 +1,8 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
+  belongs_to :user
+
   has_many   :job_categories,
              :dependent => :destroy
 

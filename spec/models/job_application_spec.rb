@@ -4,6 +4,8 @@ RSpec.describe JobApplication, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:user) }
+
     it { should have_many(:job_categories) }
 
     it { should have_many(:interviews) }
