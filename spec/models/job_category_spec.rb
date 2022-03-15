@@ -4,8 +4,6 @@ RSpec.describe JobCategory, type: :model do
   describe "Direct Associations" do
     it { should belong_to(:category) }
 
-    it { should belong_to(:job) }
-
     it { should belong_to(:job_application) }
   end
 

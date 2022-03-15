@@ -8,11 +8,5 @@
 
   <%= f.hidden_field :job_application_id, value: @job_application.id %>
 
-  <div class="form-group">
-    <%= f.label :job_id %>
-
-    <%= f.collection_select :job_id, JobType.all, :id, :to_s, {}, class: "form-control" %>
-  </div>
-
   <%= f.submit "Create job category", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

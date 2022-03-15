@@ -4,7 +4,7 @@ class JobCategoriesController < ApplicationController
   def index
     @q = JobCategory.ransack(params[:q])
     @job_categories = @q.result(distinct: true).includes(:job_application,
-                                                         :job, :category).page(params[:page]).per(10)
+                                                         :category).page(params[:page]).per(10)
   end
 
   def show; end
@@ -56,7 +56,6 @@ class JobCategoriesController < ApplicationController
   end
 
   def job_category_params
-    params.require(:job_category).permit(:category_id, :job_application_id,
-                                         :job_id)
+    params.require(:job_category).permit(:category_id, :job_application_id)
   end
 end

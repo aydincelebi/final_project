@@ -3,12 +3,10 @@ class JobTypesController < ApplicationController
 
   def index
     @q = JobType.ransack(params[:q])
-    @job_types = @q.result(distinct: true).includes(:job_categories).page(params[:page]).per(10)
+    @job_types = @q.result(distinct: true).page(params[:page]).per(10)
   end
 
-  def show
-    @job_category = JobCategory.new
-  end
+  def show; end
 
   def new
     @job_type = JobType.new

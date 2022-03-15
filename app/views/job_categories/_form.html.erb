@@ -45,27 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <div class="form-group">
-    <% job_class = "form-control" %>
-    <% job_was_invalid = job_category.errors.include?(:job) %>
-
-    <% if was_validated %>
-      <% if job_was_invalid %>
-        <% job_class << " is-invalid" %>
-      <% else %>
-        <% job_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :job_id %>
-    <%= f.collection_select :job_id, JobType.all, :id, :to_s, {}, class: "form-control" %>
-    <% if job_was_invalid %>
-      <% job_category.errors.full_messages_for(:job).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>
