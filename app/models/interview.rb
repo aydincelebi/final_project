@@ -1,6 +1,9 @@
 class Interview < ApplicationRecord
   # Direct associations
 
+  has_many   :interview_styles,
+             :dependent => :destroy
+
   belongs_to :role,
              :class_name => "JobApplication",
              :foreign_key => "application_id"

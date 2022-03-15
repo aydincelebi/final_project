@@ -4,6 +4,8 @@ RSpec.describe Interview, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:interview_styles) }
+
     it { should belong_to(:role) }
 
     end
