@@ -1,6 +1,10 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
+  has_many   :interviews,
+             :foreign_key => "application_id",
+             :dependent => :destroy
+
   belongs_to :firm,
              :class_name => "Company",
              :foreign_key => "company_id"

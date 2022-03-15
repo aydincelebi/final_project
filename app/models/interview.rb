@@ -1,6 +1,10 @@
 class Interview < ApplicationRecord
   # Direct associations
 
+  belongs_to :role,
+             :class_name => "JobApplication",
+             :foreign_key => "application_id"
+
   # Indirect associations
 
   # Validations
