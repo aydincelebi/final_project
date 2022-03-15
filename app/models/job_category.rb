@@ -3,9 +3,6 @@ class JobCategory < ApplicationRecord
 
   belongs_to :category
 
-  belongs_to :job,
-             class_name: "JobType"
-
   belongs_to :job_application
 
   # Indirect associations

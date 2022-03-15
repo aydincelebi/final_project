@@ -9,8 +9,5 @@ class JobTypeResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :job_categories,
-             foreign_key: :job_id
-
   # Indirect associations
 end

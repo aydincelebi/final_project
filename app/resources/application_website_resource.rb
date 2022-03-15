@@ -2,7 +2,7 @@ class ApplicationWebsiteResource < ApplicationResource
   attribute :id, :integer, writable: false
   attribute :created_at, :datetime, writable: false
   attribute :updated_at, :datetime, writable: false
-  attribute :name, :integer
+  attribute :name, :string
   attribute :url, :string
 
   # Direct associations
