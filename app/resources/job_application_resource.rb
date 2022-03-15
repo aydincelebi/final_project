@@ -17,6 +17,8 @@ class JobApplicationResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :user
+
   has_many   :job_categories
 
   has_many   :interviews,

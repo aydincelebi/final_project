@@ -9,6 +9,8 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :job_applications
+
   # Indirect associations
 
 end
