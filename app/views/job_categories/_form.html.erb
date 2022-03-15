@@ -1,0 +1,83 @@
+<% was_validated = job_category.errors.any? %>
+
+<%= form_with(model: job_category, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <% category_class = "form-control" %>
+    <% category_was_invalid = job_category.errors.include?(:category) %>
+
+    <% if was_validated %>
+      <% if category_was_invalid %>
+        <% category_class << " is-invalid" %>
+      <% else %>
+        <% category_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :category_id %>
+    <!-- Input for category_id start -->
+    <%= f.number_field :category_id, class: category_class, placeholder: "Enter category" %>
+    <!-- Input for category_id end -->
+    <% if category_was_invalid %>
+      <% job_category.errors.full_messages_for(:category).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for category_id end -->
+  <!-- Label and input for job_application_id start -->
+  <div class="form-group">
+    <% job_application_class = "form-control" %>
+    <% job_application_was_invalid = job_category.errors.include?(:job_application) %>
+
+    <% if was_validated %>
+      <% if job_application_was_invalid %>
+        <% job_application_class << " is-invalid" %>
+      <% else %>
+        <% job_application_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :job_application_id %>
+    <!-- Input for job_application_id start -->
+    <%= f.number_field :job_application_id, class: job_application_class, placeholder: "Enter job application" %>
+    <!-- Input for job_application_id end -->
+    <% if job_application_was_invalid %>
+      <% job_category.errors.full_messages_for(:job_application).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for job_application_id end -->
+  <!-- Label and input for job_id start -->
+  <div class="form-group">
+    <% job_class = "form-control" %>
+    <% job_was_invalid = job_category.errors.include?(:job) %>
+
+    <% if was_validated %>
+      <% if job_was_invalid %>
+        <% job_class << " is-invalid" %>
+      <% else %>
+        <% job_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :job_id %>
+    <!-- Input for job_id start -->
+    <%= f.number_field :job_id, class: job_class, placeholder: "Enter job" %>
+    <!-- Input for job_id end -->
+    <% if job_was_invalid %>
+      <% job_category.errors.full_messages_for(:job).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for job_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

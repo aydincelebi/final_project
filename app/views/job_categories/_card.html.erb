@@ -1,0 +1,51 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Job Category #<%= job_category.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Category</dt>
+      <!-- Display category_id start -->
+      <dd><%= job_category.category_id %></dd>
+      <!-- Display category_id end -->
+
+      <dt>Job application</dt>
+      <!-- Display job_application_id start -->
+      <dd><%= job_category.job_application_id %></dd>
+      <!-- Display job_application_id end -->
+
+      <dt>Job</dt>
+      <!-- Display job_id start -->
+      <dd><%= job_category.job_id %></dd>
+      <!-- Display job_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back job_category, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link job_category start -->
+      <div class="col">
+        <%= link_to edit_job_category_url(job_category), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link job_category end -->
+
+      <!-- Delete link job_category start -->
+      <div class="col">
+        <%= link_to job_category, method: :delete, data: { confirm: "Do you really want to delete this job_category?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link job_category end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(job_category.updated_at) %> ago
+  </div>
+</div>
