@@ -6,6 +6,10 @@ class Category < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :job_applications,
+             :through => :job_categories,
+             :source => :job_application
+
   # Validations
 
   # Scopes

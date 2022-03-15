@@ -20,6 +20,10 @@ class JobApplication < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :categories,
+             :through => :job_categories,
+             :source => :category
+
   # Validations
 
   validates :applied_on, :presence => true
