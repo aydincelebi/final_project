@@ -1,5 +1,7 @@
 ActiveAdmin.register JobCategory do
 
+ permit_params :category_id, :job_application_id, :job_id
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
