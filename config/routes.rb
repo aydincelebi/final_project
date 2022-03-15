@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "companies#index"
   resources :styles
   resources :interview_styles
   resources :job_categories
