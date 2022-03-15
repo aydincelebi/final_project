@@ -1,5 +1,7 @@
 ActiveAdmin.register JobType do
 
+ permit_params :product, :strategy, :new_business_launch, :venture_capital
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
