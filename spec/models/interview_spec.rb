@@ -12,6 +12,8 @@ RSpec.describe Interview, type: :model do
 
     describe "Validations" do
 
+    it { should validate_inclusion_of(:interview_round).in_array([ "Application", "1st Round", "2nd Round", "3rd Round", "Final Round" ]) }
+
     it { should validate_presence_of(:status) }
 
     it { should validate_inclusion_of(:status).in_array([ "pending", "rejected", "passed" ]) }

@@ -5,6 +5,8 @@ class Interview < ApplicationRecord
 
   # Validations
 
+  validates :interview_round, :inclusion => { :in => [ "Application", "1st Round", "2nd Round", "3rd Round", "Final Round" ]  }
+
   validates :status, :presence => true
 
   validates :status, :inclusion => { :in => [ "pending", "rejected", "passed" ]  }
