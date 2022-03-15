@@ -6,6 +6,10 @@ class Style < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :interviews,
+             :through => :interview_styles,
+             :source => :interview
+
   # Validations
 
   # Scopes

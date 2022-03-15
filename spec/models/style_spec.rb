@@ -10,6 +10,8 @@ RSpec.describe Style, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:interviews) }
+
     end
 
     describe "Validations" do

@@ -12,6 +12,8 @@ RSpec.describe Interview, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:styles) }
+
     end
 
     describe "Validations" do

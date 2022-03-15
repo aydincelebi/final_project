@@ -10,6 +10,10 @@ class Interview < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :styles,
+             :through => :interview_styles,
+             :source => :style
+
   # Validations
 
   validates :interview_round, :inclusion => { :in => [ "Application", "1st Round", "2nd Round", "3rd Round", "Final Round" ]  }
