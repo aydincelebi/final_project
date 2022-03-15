@@ -1,26 +1,21 @@
 class JobTypesController < ApplicationController
   before_action :set_job_type, only: %i[show edit update destroy]
 
-  # GET /job_types
   def index
     @q = JobType.ransack(params[:q])
     @job_types = @q.result(distinct: true).includes(:job_categories).page(params[:page]).per(10)
   end
 
-  # GET /job_types/1
   def show
     @job_category = JobCategory.new
   end
 
-  # GET /job_types/new
   def new
     @job_type = JobType.new
   end
 
-  # GET /job_types/1/edit
   def edit; end
 
-  # POST /job_types
   def create
     @job_type = JobType.new(job_type_params)
 
@@ -31,7 +26,6 @@ class JobTypesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /job_types/1
   def update
     if @job_type.update(job_type_params)
       redirect_to @job_type, notice: "Job type was successfully updated."
@@ -40,7 +34,6 @@ class JobTypesController < ApplicationController
     end
   end
 
-  # DELETE /job_types/1
   def destroy
     @job_type.destroy
     redirect_to job_types_url, notice: "Job type was successfully destroyed."
@@ -48,12 +41,10 @@ class JobTypesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_job_type
     @job_type = JobType.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def job_type_params
     params.require(:job_type).permit(:product, :strategy,
                                      :new_business_launch, :venture_capital)

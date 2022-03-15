@@ -1,27 +1,22 @@
 class InterviewsController < ApplicationController
   before_action :set_interview, only: %i[show edit update destroy]
 
-  # GET /interviews
   def index
     @q = Interview.ransack(params[:q])
     @interviews = @q.result(distinct: true).includes(:role,
                                                      :interview_styles, :styles).page(params[:page]).per(10)
   end
 
-  # GET /interviews/1
   def show
     @interview_style = InterviewStyle.new
   end
 
-  # GET /interviews/new
   def new
     @interview = Interview.new
   end
 
-  # GET /interviews/1/edit
   def edit; end
 
-  # POST /interviews
   def create
     @interview = Interview.new(interview_params)
 
@@ -37,7 +32,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /interviews/1
   def update
     if @interview.update(interview_params)
       redirect_to @interview, notice: "Interview was successfully updated."
@@ -46,7 +40,6 @@ class InterviewsController < ApplicationController
     end
   end
 
-  # DELETE /interviews/1
   def destroy
     @interview.destroy
     message = "Interview was successfully deleted."
@@ -59,12 +52,10 @@ class InterviewsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_interview
     @interview = Interview.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def interview_params
     params.require(:interview).permit(:application_id, :interview_round,
                                       :take_home, :status)

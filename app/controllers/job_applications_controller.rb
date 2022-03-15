@@ -1,28 +1,23 @@
 class JobApplicationsController < ApplicationController
   before_action :set_job_application, only: %i[show edit update destroy]
 
-  # GET /job_applications
   def index
     @q = JobApplication.ransack(params[:q])
     @job_applications = @q.result(distinct: true).includes(:firm,
                                                            :interviews, :job_categories, :user, :job_platform, :categories).page(params[:page]).per(10)
   end
 
-  # GET /job_applications/1
   def show
     @job_category = JobCategory.new
     @interview = Interview.new
   end
 
-  # GET /job_applications/new
   def new
     @job_application = JobApplication.new
   end
 
-  # GET /job_applications/1/edit
   def edit; end
 
-  # POST /job_applications
   def create
     @job_application = JobApplication.new(job_application_params)
 
@@ -38,7 +33,6 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /job_applications/1
   def update
     if @job_application.update(job_application_params)
       redirect_to @job_application,
@@ -48,7 +42,6 @@ class JobApplicationsController < ApplicationController
     end
   end
 
-  # DELETE /job_applications/1
   def destroy
     @job_application.destroy
     message = "JobApplication was successfully deleted."
@@ -61,12 +54,10 @@ class JobApplicationsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_job_application
     @job_application = JobApplication.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def job_application_params
     params.require(:job_application).permit(:name, :description, :company_id,
                                             :interest_level, :platform, :networking, :comments, :applied_on, :heard_back_on, :user_id, :job_type_id, :url)
