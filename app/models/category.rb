@@ -1,6 +1,9 @@
 class Category < ApplicationRecord
   # Direct associations
 
+  has_many   :job_categories,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

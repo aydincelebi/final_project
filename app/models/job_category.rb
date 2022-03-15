@@ -1,6 +1,8 @@
 class JobCategory < ApplicationRecord
   # Direct associations
 
+  belongs_to :category
+
   belongs_to :job,
              :class_name => "JobType"
 
