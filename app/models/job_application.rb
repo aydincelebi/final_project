@@ -1,6 +1,10 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
+  belongs_to :firm,
+             :class_name => "Company",
+             :foreign_key => "company_id"
+
   # Indirect associations
 
   # Validations

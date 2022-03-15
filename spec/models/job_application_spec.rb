@@ -4,6 +4,8 @@ RSpec.describe JobApplication, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:firm) }
+
     end
 
     describe "InDirect Associations" do
