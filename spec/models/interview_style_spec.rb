@@ -4,6 +4,8 @@ RSpec.describe InterviewStyle, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:style) }
+
     it { should belong_to(:interview) }
 
     end

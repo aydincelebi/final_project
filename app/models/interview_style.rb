@@ -1,6 +1,8 @@
 class InterviewStyle < ApplicationRecord
   # Direct associations
 
+  belongs_to :style
+
   belongs_to :interview
 
   # Indirect associations
