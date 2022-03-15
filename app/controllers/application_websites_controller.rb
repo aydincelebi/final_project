@@ -3,7 +3,8 @@ class ApplicationWebsitesController < ApplicationController
 
   # GET /application_websites
   def index
-    @application_websites = ApplicationWebsite.page(params[:page]).per(10)
+    @q = ApplicationWebsite.ransack(params[:q])
+    @application_websites = @q.result(:distinct => true).includes(:job_applications).page(params[:page]).per(10)
   end
 
   # GET /application_websites/1

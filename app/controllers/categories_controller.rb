@@ -3,7 +3,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories
   def index
-    @categories = Category.page(params[:page]).per(10)
+    @q = Category.ransack(params[:q])
+    @categories = @q.result(:distinct => true).includes(:job_categories, :job_applications).page(params[:page]).per(10)
   end
 
   # GET /categories/1

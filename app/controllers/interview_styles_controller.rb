@@ -3,7 +3,8 @@ class InterviewStylesController < ApplicationController
 
   # GET /interview_styles
   def index
-    @interview_styles = InterviewStyle.page(params[:page]).per(10)
+    @q = InterviewStyle.ransack(params[:q])
+    @interview_styles = @q.result(:distinct => true).includes(:interview, :style).page(params[:page]).per(10)
   end
 
   # GET /interview_styles/1

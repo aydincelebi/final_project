@@ -3,7 +3,8 @@ class JobApplicationsController < ApplicationController
 
   # GET /job_applications
   def index
-    @job_applications = JobApplication.page(params[:page]).per(10)
+    @q = JobApplication.ransack(params[:q])
+    @job_applications = @q.result(:distinct => true).includes(:firm, :interviews, :job_categories, :user, :job_platform, :categories).page(params[:page]).per(10)
   end
 
   # GET /job_applications/1
