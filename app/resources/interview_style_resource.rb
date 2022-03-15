@@ -12,5 +12,4 @@ class InterviewStyleResource < ApplicationResource
   belongs_to :interview
 
   # Indirect associations
-
 end

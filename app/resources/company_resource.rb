@@ -12,5 +12,4 @@ class CompanyResource < ApplicationResource
              resource: JobApplicationResource
 
   # Indirect associations
-
 end

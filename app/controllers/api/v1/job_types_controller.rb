@@ -13,7 +13,7 @@ class Api::V1::JobTypesController < Api::V1::GraphitiController
     job_type = JobTypeResource.build(params)
 
     if job_type.save
-      render jsonapi: job_type, status: 201
+      render jsonapi: job_type, status: :created
     else
       render jsonapi_errors: job_type
     end
@@ -33,7 +33,7 @@ class Api::V1::JobTypesController < Api::V1::GraphitiController
     job_type = JobTypeResource.find(params)
 
     if job_type.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: job_type
     end

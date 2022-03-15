@@ -2,8 +2,8 @@ class JobType < ApplicationRecord
   # Direct associations
 
   has_many   :job_categories,
-             :foreign_key => "job_id",
-             :dependent => :destroy
+             foreign_key: "job_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -14,5 +14,4 @@ class JobType < ApplicationRecord
   def to_s
     product
   end
-
 end

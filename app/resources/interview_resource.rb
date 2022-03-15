@@ -18,5 +18,4 @@ class InterviewResource < ApplicationResource
   # Indirect associations
 
   many_to_many :styles
-
 end

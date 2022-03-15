@@ -6,10 +6,9 @@ class CategoryResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :job_categories
+  has_many :job_categories
 
   # Indirect associations
 
   many_to_many :job_applications
-
 end

@@ -16,5 +16,4 @@ class JobCategoryResource < ApplicationResource
   belongs_to :job_application
 
   # Indirect associations
-
 end

@@ -1,6 +1,5 @@
 ActiveAdmin.register JobType do
-
- permit_params :product, :strategy, :new_business_launch, :venture_capital
+  permit_params :product, :strategy, :new_business_launch, :venture_capital
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -14,5 +13,4 @@ ActiveAdmin.register JobType do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
 end

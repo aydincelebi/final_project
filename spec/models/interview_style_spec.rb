@@ -1,20 +1,15 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe InterviewStyle, type: :model do
-  
-    describe "Direct Associations" do
-
+  describe "Direct Associations" do
     it { should belong_to(:style) }
 
     it { should belong_to(:interview) }
+  end
 
-    end
+  describe "InDirect Associations" do
+  end
 
-    describe "InDirect Associations" do
-
-    end
-
-    describe "Validations" do
-
-    end
+  describe "Validations" do
+  end
 end

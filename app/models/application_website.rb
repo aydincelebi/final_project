@@ -2,8 +2,8 @@ class ApplicationWebsite < ApplicationRecord
   # Direct associations
 
   has_many   :job_applications,
-             :foreign_key => "platform",
-             :dependent => :destroy
+             foreign_key: "platform",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -14,5 +14,4 @@ class ApplicationWebsite < ApplicationRecord
   def to_s
     created_at
   end
-
 end

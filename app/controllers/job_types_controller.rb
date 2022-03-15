@@ -1,10 +1,10 @@
 class JobTypesController < ApplicationController
-  before_action :set_job_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_job_type, only: %i[show edit update destroy]
 
   # GET /job_types
   def index
     @q = JobType.ransack(params[:q])
-    @job_types = @q.result(:distinct => true).includes(:job_categories).page(params[:page]).per(10)
+    @job_types = @q.result(distinct: true).includes(:job_categories).page(params[:page]).per(10)
   end
 
   # GET /job_types/1
@@ -18,15 +18,14 @@ class JobTypesController < ApplicationController
   end
 
   # GET /job_types/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /job_types
   def create
     @job_type = JobType.new(job_type_params)
 
     if @job_type.save
-      redirect_to @job_type, notice: 'Job type was successfully created.'
+      redirect_to @job_type, notice: "Job type was successfully created."
     else
       render :new
     end
@@ -35,7 +34,7 @@ class JobTypesController < ApplicationController
   # PATCH/PUT /job_types/1
   def update
     if @job_type.update(job_type_params)
-      redirect_to @job_type, notice: 'Job type was successfully updated.'
+      redirect_to @job_type, notice: "Job type was successfully updated."
     else
       render :edit
     end
@@ -44,17 +43,19 @@ class JobTypesController < ApplicationController
   # DELETE /job_types/1
   def destroy
     @job_type.destroy
-    redirect_to job_types_url, notice: 'Job type was successfully destroyed.'
+    redirect_to job_types_url, notice: "Job type was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job_type
-      @job_type = JobType.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def job_type_params
-      params.require(:job_type).permit(:product, :strategy, :new_business_launch, :venture_capital)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job_type
+    @job_type = JobType.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def job_type_params
+    params.require(:job_type).permit(:product, :strategy,
+                                     :new_business_launch, :venture_capital)
+  end
 end

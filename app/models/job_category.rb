@@ -4,7 +4,7 @@ class JobCategory < ApplicationRecord
   belongs_to :category
 
   belongs_to :job,
-             :class_name => "JobType"
+             class_name: "JobType"
 
   belongs_to :job_application
 
@@ -17,5 +17,4 @@ class JobCategory < ApplicationRecord
   def to_s
     category.to_s
   end
-
 end

@@ -13,5 +13,4 @@ class JobTypeResource < ApplicationResource
              foreign_key: :job_id
 
   # Indirect associations
-
 end

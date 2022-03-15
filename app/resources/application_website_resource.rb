@@ -11,5 +11,4 @@ class ApplicationWebsiteResource < ApplicationResource
              foreign_key: :platform
 
   # Indirect associations
-
 end

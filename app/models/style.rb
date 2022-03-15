@@ -2,13 +2,13 @@ class Style < ApplicationRecord
   # Direct associations
 
   has_many   :interview_styles,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :interviews,
-             :through => :interview_styles,
-             :source => :interview
+             through: :interview_styles,
+             source: :interview
 
   # Validations
 
@@ -17,5 +17,4 @@ class Style < ApplicationRecord
   def to_s
     name
   end
-
 end

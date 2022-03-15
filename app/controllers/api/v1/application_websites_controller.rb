@@ -13,7 +13,7 @@ class Api::V1::ApplicationWebsitesController < Api::V1::GraphitiController
     application_website = ApplicationWebsiteResource.build(params)
 
     if application_website.save
-      render jsonapi: application_website, status: 201
+      render jsonapi: application_website, status: :created
     else
       render jsonapi_errors: application_website
     end
@@ -33,7 +33,7 @@ class Api::V1::ApplicationWebsitesController < Api::V1::GraphitiController
     application_website = ApplicationWebsiteResource.find(params)
 
     if application_website.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: application_website
     end

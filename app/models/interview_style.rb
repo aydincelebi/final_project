@@ -14,5 +14,4 @@ class InterviewStyle < ApplicationRecord
   def to_s
     interview.to_s
   end
-
 end

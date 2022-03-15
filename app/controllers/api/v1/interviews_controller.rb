@@ -13,7 +13,7 @@ class Api::V1::InterviewsController < Api::V1::GraphitiController
     interview = InterviewResource.build(params)
 
     if interview.save
-      render jsonapi: interview, status: 201
+      render jsonapi: interview, status: :created
     else
       render jsonapi_errors: interview
     end
@@ -33,7 +33,7 @@ class Api::V1::InterviewsController < Api::V1::GraphitiController
     interview = InterviewResource.find(params)
 
     if interview.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: interview
     end

@@ -6,10 +6,9 @@ class StyleResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :interview_styles
+  has_many :interview_styles
 
   # Indirect associations
 
   many_to_many :interviews
-
 end

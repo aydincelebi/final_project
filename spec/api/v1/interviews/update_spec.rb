@@ -1,32 +1,32 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "interviews#update", type: :request do
   subject(:make_request) do
     jsonapi_put "/api/v1/interviews/#{interview.id}", payload
   end
 
-  describe 'basic update' do
+  describe "basic update" do
     let!(:interview) { create(:interview) }
 
     let(:payload) do
       {
         data: {
           id: interview.id.to_s,
-          type: 'interviews',
+          type: "interviews",
           attributes: {
             # ... your attrs here
-          }
-        }
+          },
+        },
       }
     end
 
     # Replace 'xit' with 'it' after adding attributes
-    xit 'updates the resource' do
+    xit "updates the resource" do
       expect(InterviewResource).to receive(:find).and_call_original
-      expect {
+      expect do
         make_request
         expect(response.status).to eq(200), response.body
-      }.to change { interview.reload.attributes }
+      end.to change { interview.reload.attributes }
     end
   end
 end

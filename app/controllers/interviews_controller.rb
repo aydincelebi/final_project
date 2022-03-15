@@ -1,10 +1,11 @@
 class InterviewsController < ApplicationController
-  before_action :set_interview, only: [:show, :edit, :update, :destroy]
+  before_action :set_interview, only: %i[show edit update destroy]
 
   # GET /interviews
   def index
     @q = Interview.ransack(params[:q])
-    @interviews = @q.result(:distinct => true).includes(:role, :interview_styles, :styles).page(params[:page]).per(10)
+    @interviews = @q.result(distinct: true).includes(:role,
+                                                     :interview_styles, :styles).page(params[:page]).per(10)
   end
 
   # GET /interviews/1
@@ -18,17 +19,16 @@ class InterviewsController < ApplicationController
   end
 
   # GET /interviews/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /interviews
   def create
     @interview = Interview.new(interview_params)
 
     if @interview.save
-      message = 'Interview was successfully created.'
-      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
-        redirect_back fallback_location: request.referrer, notice: message
+      message = "Interview was successfully created."
+      if Rails.application.routes.recognize_path(request.referer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referer, notice: message
       else
         redirect_to @interview, notice: message
       end
@@ -40,7 +40,7 @@ class InterviewsController < ApplicationController
   # PATCH/PUT /interviews/1
   def update
     if @interview.update(interview_params)
-      redirect_to @interview, notice: 'Interview was successfully updated.'
+      redirect_to @interview, notice: "Interview was successfully updated."
     else
       render :edit
     end
@@ -50,22 +50,23 @@ class InterviewsController < ApplicationController
   def destroy
     @interview.destroy
     message = "Interview was successfully deleted."
-    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
-      redirect_back fallback_location: request.referrer, notice: message
+    if Rails.application.routes.recognize_path(request.referer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referer, notice: message
     else
       redirect_to interviews_url, notice: message
     end
   end
 
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_interview
-      @interview = Interview.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def interview_params
-      params.require(:interview).permit(:application_id, :interview_round, :take_home, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_interview
+    @interview = Interview.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def interview_params
+    params.require(:interview).permit(:application_id, :interview_round,
+                                      :take_home, :status)
+  end
 end
