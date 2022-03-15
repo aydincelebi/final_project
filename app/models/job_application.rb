@@ -5,6 +5,8 @@ class JobApplication < ApplicationRecord
 
   # Validations
 
+  validates :applied_on, :presence => true
+
   validates :description, :presence => true
 
   validates :interest_level, :presence => true
