@@ -7,17 +7,29 @@
     <dl class="mb-1">
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= job_category.category_id %></dd>
+      <dd>
+        <% if @job_category.category.present? %>
+          <%= link_to job_category.category, job_category.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Job application</dt>
       <!-- Display job_application_id start -->
-      <dd><%= job_category.job_application_id %></dd>
+      <dd>
+        <% if @job_category.job_application.present? %>
+          <%= link_to job_category.job_application, job_category.job_application %>
+        <% end %>
+      </dd>
       <!-- Display job_application_id end -->
 
       <dt>Job</dt>
       <!-- Display job_id start -->
-      <dd><%= job_category.job_id %></dd>
+      <dd>
+        <% if @job_category.job.present? %>
+          <%= link_to job_category.job, job_category.job %>
+        <% end %>
+      </dd>
       <!-- Display job_id end -->
 
     </dl>

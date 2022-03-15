@@ -17,7 +17,11 @@
 
       <dt>Company</dt>
       <!-- Display company_id start -->
-      <dd><%= job_application.company_id %></dd>
+      <dd>
+        <% if @job_application.firm.present? %>
+          <%= link_to job_application.firm, job_application.firm %>
+        <% end %>
+      </dd>
       <!-- Display company_id end -->
 
       <dt>Interest level</dt>
@@ -27,7 +31,11 @@
 
       <dt>Platform</dt>
       <!-- Display platform start -->
-      <dd><%= job_application.platform %></dd>
+      <dd>
+        <% if @job_application.job_platform.present? %>
+          <%= link_to job_application.job_platform, job_application.job_platform %>
+        <% end %>
+      </dd>
       <!-- Display platform end -->
 
       <dt>Networking</dt>
@@ -52,7 +60,11 @@
 
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= job_application.user_id %></dd>
+      <dd>
+        <% if @job_application.user.present? %>
+          <%= link_to job_application.user, job_application.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Job type</dt>

@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>Application</dt>
       <!-- Display application_id start -->
-      <dd><%= interview.application_id %></dd>
+      <dd>
+        <% if @interview.role.present? %>
+          <%= link_to interview.role, interview.role %>
+        <% end %>
+      </dd>
       <!-- Display application_id end -->
 
       <dt>Interview round</dt>

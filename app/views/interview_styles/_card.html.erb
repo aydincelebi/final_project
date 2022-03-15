@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>Interview</dt>
       <!-- Display interview_id start -->
-      <dd><%= interview_style.interview_id %></dd>
+      <dd>
+        <% if @interview_style.interview.present? %>
+          <%= link_to interview_style.interview, interview_style.interview %>
+        <% end %>
+      </dd>
       <!-- Display interview_id end -->
 
       <dt>Style</dt>
       <!-- Display style_id start -->
-      <dd><%= interview_style.style_id %></dd>
+      <dd>
+        <% if @interview_style.style.present? %>
+          <%= link_to interview_style.style, interview_style.style %>
+        <% end %>
+      </dd>
       <!-- Display style_id end -->
 
     </dl>
