@@ -16,7 +16,7 @@
 
     <%= f.label :application_id %>
     <!-- Input for application_id start -->
-    <%= f.number_field :application_id, class: application_class, placeholder: "Enter application" %>
+    <%= f.collection_select :application_id, JobApplication.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for application_id end -->
     <% if application_was_invalid %>
       <% interview.errors.full_messages_for(:application).each do |message| %>
