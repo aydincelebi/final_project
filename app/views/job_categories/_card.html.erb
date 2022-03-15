@@ -6,31 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Category</dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @job_category.category.present? %>
           <%= link_to job_category.category, job_category.category %>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>Job application</dt>
-      <!-- Display job_application_id start -->
       <dd>
         <% if @job_category.job_application.present? %>
           <%= link_to job_category.job_application, job_category.job_application %>
         <% end %>
       </dd>
-      <!-- Display job_application_id end -->
 
       <dt>Job</dt>
-      <!-- Display job_id start -->
       <dd>
         <% if @job_category.job.present? %>
           <%= link_to job_category.job, job_category.job %>
         <% end %>
       </dd>
-      <!-- Display job_id end -->
 
     </dl>
 
@@ -39,21 +33,17 @@
         <%= link_to_show_or_back job_category, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link job_category start -->
       <div class="col">
         <%= link_to edit_job_category_url(job_category), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link job_category end -->
 
-      <!-- Delete link job_category start -->
       <div class="col">
         <%= link_to job_category, method: :delete, data: { confirm: "Do you really want to delete this job_category?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link job_category end -->
     </div>
   </div>
 

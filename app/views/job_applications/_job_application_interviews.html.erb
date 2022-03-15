@@ -10,24 +10,18 @@
   <ul class="list-group list-group-flush">
     <% @job_application.interviews.each do |interview| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to interview, interview %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%= link_to interview, method: :delete, data: { confirm: "Do you really want to delete this interview" } do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="job_application_interviews_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "job_applications/job_application_interviews_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

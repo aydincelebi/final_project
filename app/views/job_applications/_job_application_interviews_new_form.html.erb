@@ -1,42 +1,24 @@
-<!-- Form interview start -->
 <%= form_with(model: @interview, local: true) do |f| %>
-<!-- Form interview end -->
 
-  <!-- Label and input for application_id start -->
-  <!-- Input for application_id start -->
   <%= f.hidden_field :application_id, value: @job_application.id %>
-  <!-- Input for application_id end -->
-  <!-- Label and input for application_id end -->
 
-  <!-- Label and input for interview_round start -->
   <div class="form-group">
     <%= f.label :interview_round %>
 
-    <!-- Input for interview_round start -->
     <%= f.text_field :interview_round, class: "form-control" %>
-    <!-- Input for interview_round end -->
   </div>
-  <!-- Label and input for interview_round end -->
 
-  <!-- Label and input for take_home start -->
   <div class="form-group">
     <%= f.label :take_home %>
 
-    <!-- Input for take_home start -->
     <%= f.text_field :take_home, class: "form-control" %>
-    <!-- Input for take_home end -->
   </div>
-  <!-- Label and input for take_home end -->
 
-  <!-- Label and input for status start -->
   <div class="form-group">
     <%= f.label :status %>
 
-    <!-- Input for status start -->
     <%= f.text_field :status, class: "form-control" %>
-    <!-- Input for status end -->
   </div>
-  <!-- Label and input for status end -->
 
   <%= f.submit "Create interview", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

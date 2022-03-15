@@ -1,7 +1,6 @@
 <% was_validated = job_type.errors.any? %>
 
 <%= form_with(model: job_type, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for product start -->
   <div class="form-group">
     <% product_class = "form-control" %>
     <% product_was_invalid = job_type.errors.include?(:product) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :product %>
-    <!-- Input for product start -->
     <%= f.number_field :product, class: product_class, placeholder: "Enter product" %>
-    <!-- Input for product end -->
     <% if product_was_invalid %>
       <% job_type.errors.full_messages_for(:product).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for product end -->
-  <!-- Label and input for strategy start -->
   <div class="form-group">
     <% strategy_class = "form-control" %>
     <% strategy_was_invalid = job_type.errors.include?(:strategy) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :strategy %>
-    <!-- Input for strategy start -->
     <%= f.number_field :strategy, class: strategy_class, placeholder: "Enter strategy" %>
-    <!-- Input for strategy end -->
     <% if strategy_was_invalid %>
       <% job_type.errors.full_messages_for(:strategy).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for strategy end -->
-  <!-- Label and input for new_business_launch start -->
   <div class="form-group">
     <% new_business_launch_class = "form-control" %>
     <% new_business_launch_was_invalid = job_type.errors.include?(:new_business_launch) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :new_business_launch %>
-    <!-- Input for new_business_launch start -->
     <%= f.number_field :new_business_launch, class: new_business_launch_class, placeholder: "Enter new business launch" %>
-    <!-- Input for new_business_launch end -->
     <% if new_business_launch_was_invalid %>
       <% job_type.errors.full_messages_for(:new_business_launch).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for new_business_launch end -->
-  <!-- Label and input for venture_capital start -->
   <div class="form-group">
     <% venture_capital_class = "form-control" %>
     <% venture_capital_was_invalid = job_type.errors.include?(:venture_capital) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :venture_capital %>
-    <!-- Input for venture_capital start -->
     <%= f.number_field :venture_capital, class: venture_capital_class, placeholder: "Enter venture capital" %>
-    <!-- Input for venture_capital end -->
     <% if venture_capital_was_invalid %>
       <% job_type.errors.full_messages_for(:venture_capital).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,6 +89,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for venture_capital end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

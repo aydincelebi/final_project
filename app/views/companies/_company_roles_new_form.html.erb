@@ -1,119 +1,69 @@
-<!-- Form job_application start -->
 <%= form_with(model: @job_application, local: true) do |f| %>
-<!-- Form job_application end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <%= f.label :name %>
 
-    <!-- Input for name start -->
     <%= f.text_field :name, class: "form-control" %>
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, rows: "3", class: "form-control" %>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for company_id start -->
-  <!-- Input for company_id start -->
   <%= f.hidden_field :company_id, value: @company.id %>
-  <!-- Input for company_id end -->
-  <!-- Label and input for company_id end -->
 
-  <!-- Label and input for interest_level start -->
   <div class="form-group">
     <%= f.label :interest_level %>
 
-    <!-- Input for interest_level start -->
     <%= f.text_field :interest_level, class: "form-control" %>
-    <!-- Input for interest_level end -->
   </div>
-  <!-- Label and input for interest_level end -->
 
-  <!-- Label and input for platform start -->
   <div class="form-group">
     <%= f.label :platform %>
 
-    <!-- Input for platform start -->
     <%= f.collection_select :platform, ApplicationWebsite.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for platform end -->
   </div>
-  <!-- Label and input for platform end -->
 
-  <!-- Label and input for networking start -->
   <div class="form-group">
     <%= f.label :networking %>
 
-    <!-- Input for networking start -->
     <%= f.text_field :networking, class: "form-control" %>
-    <!-- Input for networking end -->
   </div>
-  <!-- Label and input for networking end -->
 
-  <!-- Label and input for comments start -->
   <div class="form-group">
     <%= f.label :comments %>
-    <!-- Input for comments start -->
     <%= f.text_area :comments, rows: "3", class: "form-control" %>
-    <!-- Input for comments end -->
   </div>
-  <!-- Label and input for comments end -->
 
-  <!-- Label and input for applied_on start -->
   <div class="form-group">
     <%= f.label :applied_on %>
 
-    <!-- Input for applied_on start -->
     <%= f.date_select :applied_on, class: "form-control" %>
-    <!-- Input for applied_on end -->
   </div>
-  <!-- Label and input for applied_on end -->
 
-  <!-- Label and input for heard_back_on start -->
   <div class="form-group">
     <%= f.label :heard_back_on %>
-    <!-- Input for heard_back_on start -->
     <%= f.datetime_select :heard_back_on, class: "form-control" %>
-    <!-- Input for heard_back_on end -->
   </div>
-  <!-- Label and input for heard_back_on end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <%= f.label :user_id %>
 
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for job_type_id start -->
   <div class="form-group">
     <%= f.label :job_type_id %>
 
-    <!-- Input for job_type_id start -->
     <%= f.text_field :job_type_id, class: "form-control" %>
-    <!-- Input for job_type_id end -->
   </div>
-  <!-- Label and input for job_type_id end -->
 
-  <!-- Label and input for url start -->
   <div class="form-group">
     <%= f.label :url %>
 
-    <!-- Input for url start -->
     <%= f.text_field :url, class: "form-control" %>
-    <!-- Input for url end -->
   </div>
-  <!-- Label and input for url end -->
 
   <%= f.submit "Create job application", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

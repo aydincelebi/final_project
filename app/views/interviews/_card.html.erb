@@ -6,28 +6,20 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Application</dt>
-      <!-- Display application_id start -->
       <dd>
         <% if @interview.role.present? %>
           <%= link_to interview.role, interview.role %>
         <% end %>
       </dd>
-      <!-- Display application_id end -->
 
       <dt>Interview round</dt>
-      <!-- Display interview_round start -->
       <dd><%= interview.interview_round %></dd>
-      <!-- Display interview_round end -->
 
       <dt>Take home</dt>
-      <!-- Display take_home start -->
       <dd><%= interview.take_home %></dd>
-      <!-- Display take_home end -->
 
       <dt>Status</dt>
-      <!-- Display status start -->
       <dd><%= interview.status %></dd>
-      <!-- Display status end -->
 
     </dl>
 
@@ -36,21 +28,17 @@
         <%= link_to_show_or_back interview, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link interview start -->
       <div class="col">
         <%= link_to edit_interview_url(interview), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link interview end -->
 
-      <!-- Delete link interview start -->
       <div class="col">
         <%= link_to interview, method: :delete, data: { confirm: "Do you really want to delete this interview?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link interview end -->
     </div>
   </div>
 

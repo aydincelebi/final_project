@@ -6,22 +6,18 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Interview</dt>
-      <!-- Display interview_id start -->
       <dd>
         <% if @interview_style.interview.present? %>
           <%= link_to interview_style.interview, interview_style.interview %>
         <% end %>
       </dd>
-      <!-- Display interview_id end -->
 
       <dt>Style</dt>
-      <!-- Display style_id start -->
       <dd>
         <% if @interview_style.style.present? %>
           <%= link_to interview_style.style, interview_style.style %>
         <% end %>
       </dd>
-      <!-- Display style_id end -->
 
     </dl>
 
@@ -30,21 +26,17 @@
         <%= link_to_show_or_back interview_style, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link interview_style start -->
       <div class="col">
         <%= link_to edit_interview_style_url(interview_style), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link interview_style end -->
 
-      <!-- Delete link interview_style start -->
       <div class="col">
         <%= link_to interview_style, method: :delete, data: { confirm: "Do you really want to delete this interview_style?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link interview_style end -->
     </div>
   </div>
 

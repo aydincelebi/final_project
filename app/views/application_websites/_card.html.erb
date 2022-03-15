@@ -6,14 +6,10 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= application_website.name %></dd>
-      <!-- Display name end -->
 
       <dt>Url</dt>
-      <!-- Display url start -->
       <dd><%= application_website.url %></dd>
-      <!-- Display url end -->
 
     </dl>
 
@@ -22,21 +18,17 @@
         <%= link_to_show_or_back application_website, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link application_website start -->
       <div class="col">
         <%= link_to edit_application_website_url(application_website), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link application_website end -->
 
-      <!-- Delete link application_website start -->
       <div class="col">
         <%= link_to application_website, method: :delete, data: { confirm: "Do you really want to delete this application_website?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link application_website end -->
     </div>
   </div>
 

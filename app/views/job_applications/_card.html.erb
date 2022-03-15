@@ -6,76 +6,52 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= job_application.name %></dd>
-      <!-- Display name end -->
 
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= job_application.description %></dd>
-      <!-- Display description end -->
 
       <dt>Company</dt>
-      <!-- Display company_id start -->
       <dd>
         <% if @job_application.firm.present? %>
           <%= link_to job_application.firm, job_application.firm %>
         <% end %>
       </dd>
-      <!-- Display company_id end -->
 
       <dt>Interest level</dt>
-      <!-- Display interest_level start -->
       <dd><%= job_application.interest_level %></dd>
-      <!-- Display interest_level end -->
 
       <dt>Platform</dt>
-      <!-- Display platform start -->
       <dd>
         <% if @job_application.job_platform.present? %>
           <%= link_to job_application.job_platform, job_application.job_platform %>
         <% end %>
       </dd>
-      <!-- Display platform end -->
 
       <dt>Networking</dt>
-      <!-- Display networking start -->
       <dd><%= job_application.networking %></dd>
-      <!-- Display networking end -->
 
       <dt>Comments</dt>
-      <!-- Display comments start -->
       <dd><%= job_application.comments %></dd>
-      <!-- Display comments end -->
 
       <dt>Applied on</dt>
-      <!-- Display applied_on start -->
       <dd><%= job_application.applied_on %></dd>
-      <!-- Display applied_on end -->
 
       <dt>Heard back on</dt>
-      <!-- Display heard_back_on start -->
       <dd><%= job_application.heard_back_on %></dd>
-      <!-- Display heard_back_on end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @job_application.user.present? %>
           <%= link_to job_application.user, job_application.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Job type</dt>
-      <!-- Display job_type_id start -->
       <dd><%= job_application.job_type_id %></dd>
-      <!-- Display job_type_id end -->
 
       <dt>Url</dt>
-      <!-- Display url start -->
       <dd><%= job_application.url %></dd>
-      <!-- Display url end -->
 
     </dl>
 
@@ -84,21 +60,17 @@
         <%= link_to_show_or_back job_application, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link job_application start -->
       <div class="col">
         <%= link_to edit_job_application_url(job_application), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link job_application end -->
 
-      <!-- Delete link job_application start -->
       <div class="col">
         <%= link_to job_application, method: :delete, data: { confirm: "Do you really want to delete this job_application?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link job_application end -->
     </div>
   </div>
 

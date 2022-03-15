@@ -1,7 +1,6 @@
 <% was_validated = job_application.errors.any? %>
 
 <%= form_with(model: job_application, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for name start -->
   <div class="form-group">
     <% name_class = "form-control" %>
     <% name_was_invalid = job_application.errors.include?(:name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :name %>
-    <!-- Input for name start -->
     <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
-    <!-- Input for name end -->
     <% if name_was_invalid %>
       <% job_application.errors.full_messages_for(:name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for name end -->
-  <!-- Label and input for description start -->
   <div class="form-group">
     <% description_class = "form-control" %>
     <% description_was_invalid = job_application.errors.include?(:description) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, class: description_class, placeholder: "Enter description" %>
-    <!-- Input for description end -->
     <% if description_was_invalid %>
       <% job_application.errors.full_messages_for(:description).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for description end -->
-  <!-- Label and input for company_id start -->
   <div class="form-group">
     <% company_class = "form-control" %>
     <% company_was_invalid = job_application.errors.include?(:company) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :company_id %>
-    <!-- Input for company_id start -->
     <%= f.collection_select :company_id, Company.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for company_id end -->
     <% if company_was_invalid %>
       <% job_application.errors.full_messages_for(:company).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,8 +67,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for company_id end -->
-  <!-- Label and input for interest_level start -->
   <div class="form-group">
     <% interest_level_class = "form-control" %>
     <% interest_level_was_invalid = job_application.errors.include?(:interest_level) %>
@@ -93,9 +80,7 @@
     <% end %>
 
     <%= f.label :interest_level %>
-    <!-- Input for interest_level start -->
     <%= f.number_field :interest_level, class: interest_level_class, placeholder: "Enter interest level" %>
-    <!-- Input for interest_level end -->
     <% if interest_level_was_invalid %>
       <% job_application.errors.full_messages_for(:interest_level).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -104,8 +89,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for interest_level end -->
-  <!-- Label and input for platform start -->
   <div class="form-group">
     <% platform_class = "form-control" %>
     <% platform_was_invalid = job_application.errors.include?(:platform) %>
@@ -119,9 +102,7 @@
     <% end %>
 
     <%= f.label :platform %>
-    <!-- Input for platform start -->
     <%= f.collection_select :platform, ApplicationWebsite.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for platform end -->
     <% if platform_was_invalid %>
       <% job_application.errors.full_messages_for(:platform).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -130,8 +111,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for platform end -->
-  <!-- Label and input for networking start -->
   <div class="form-group">
     <% networking_class = "form-control" %>
     <% networking_was_invalid = job_application.errors.include?(:networking) %>
@@ -145,9 +124,7 @@
     <% end %>
 
     <%= f.label :networking %>
-    <!-- Input for networking start -->
     <%= f.number_field :networking, class: networking_class, placeholder: "Enter networking" %>
-    <!-- Input for networking end -->
     <% if networking_was_invalid %>
       <% job_application.errors.full_messages_for(:networking).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -156,8 +133,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for networking end -->
-  <!-- Label and input for comments start -->
   <div class="form-group">
     <% comment_class = "form-control" %>
     <% comment_was_invalid = job_application.errors.include?(:comment) %>
@@ -171,9 +146,7 @@
     <% end %>
 
     <%= f.label :comments %>
-    <!-- Input for comments start -->
     <%= f.text_area :comments, class: comment_class, placeholder: "Enter comment" %>
-    <!-- Input for comments end -->
     <% if comment_was_invalid %>
       <% job_application.errors.full_messages_for(:comment).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -182,8 +155,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for comments end -->
-  <!-- Label and input for applied_on start -->
   <div class="form-group">
     <% applied_on_class = "form-control" %>
     <% applied_on_was_invalid = job_application.errors.include?(:applied_on) %>
@@ -197,9 +168,7 @@
     <% end %>
 
     <%= f.label :applied_on %>
-    <!-- Input for applied_on start -->
     <%= f.date_select :applied_on, class: applied_on_class, placeholder: "Enter applied on" %>
-    <!-- Input for applied_on end -->
     <% if applied_on_was_invalid %>
       <% job_application.errors.full_messages_for(:applied_on).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -208,8 +177,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for applied_on end -->
-  <!-- Label and input for heard_back_on start -->
   <div class="form-group">
     <% heard_back_on_class = "form-control" %>
     <% heard_back_on_was_invalid = job_application.errors.include?(:heard_back_on) %>
@@ -223,9 +190,7 @@
     <% end %>
 
     <%= f.label :heard_back_on %>
-    <!-- Input for heard_back_on start -->
     <%= f.datetime_select :heard_back_on, class: heard_back_on_class, placeholder: "Enter heard back on" %>
-    <!-- Input for heard_back_on end -->
     <% if heard_back_on_was_invalid %>
       <% job_application.errors.full_messages_for(:heard_back_on).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -234,8 +199,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for heard_back_on end -->
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <% user_class = "form-control" %>
     <% user_was_invalid = job_application.errors.include?(:user) %>
@@ -249,9 +212,7 @@
     <% end %>
 
     <%= f.label :user_id %>
-    <!-- Input for user_id start -->
     <%= f.collection_select :user_id, User.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for user_id end -->
     <% if user_was_invalid %>
       <% job_application.errors.full_messages_for(:user).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -260,8 +221,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_id end -->
-  <!-- Label and input for job_type_id start -->
   <div class="form-group">
     <% job_type_class = "form-control" %>
     <% job_type_was_invalid = job_application.errors.include?(:job_type) %>
@@ -275,9 +234,7 @@
     <% end %>
 
     <%= f.label :job_type_id %>
-    <!-- Input for job_type_id start -->
     <%= f.number_field :job_type_id, class: job_type_class, placeholder: "Enter job type" %>
-    <!-- Input for job_type_id end -->
     <% if job_type_was_invalid %>
       <% job_application.errors.full_messages_for(:job_type).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -286,8 +243,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for job_type_id end -->
-  <!-- Label and input for url start -->
   <div class="form-group">
     <% url_class = "form-control" %>
     <% url_was_invalid = job_application.errors.include?(:url) %>
@@ -301,9 +256,7 @@
     <% end %>
 
     <%= f.label :url %>
-    <!-- Input for url start -->
     <%= f.text_field :url, class: url_class, placeholder: "Enter url" %>
-    <!-- Input for url end -->
     <% if url_was_invalid %>
       <% job_application.errors.full_messages_for(:url).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -312,6 +265,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for url end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

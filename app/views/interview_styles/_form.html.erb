@@ -1,7 +1,6 @@
 <% was_validated = interview_style.errors.any? %>
 
 <%= form_with(model: interview_style, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for interview_id start -->
   <div class="form-group">
     <% interview_class = "form-control" %>
     <% interview_was_invalid = interview_style.errors.include?(:interview) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :interview_id %>
-    <!-- Input for interview_id start -->
     <%= f.collection_select :interview_id, Interview.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for interview_id end -->
     <% if interview_was_invalid %>
       <% interview_style.errors.full_messages_for(:interview).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for interview_id end -->
-  <!-- Label and input for style_id start -->
   <div class="form-group">
     <% style_class = "form-control" %>
     <% style_was_invalid = interview_style.errors.include?(:style) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :style_id %>
-    <!-- Input for style_id start -->
     <%= f.collection_select :style_id, Style.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for style_id end -->
     <% if style_was_invalid %>
       <% interview_style.errors.full_messages_for(:style).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for style_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

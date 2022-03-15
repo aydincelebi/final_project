@@ -6,24 +6,16 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Product</dt>
-      <!-- Display product start -->
       <dd><%= job_type.product %></dd>
-      <!-- Display product end -->
 
       <dt>Strategy</dt>
-      <!-- Display strategy start -->
       <dd><%= job_type.strategy %></dd>
-      <!-- Display strategy end -->
 
       <dt>New business launch</dt>
-      <!-- Display new_business_launch start -->
       <dd><%= job_type.new_business_launch %></dd>
-      <!-- Display new_business_launch end -->
 
       <dt>Venture capital</dt>
-      <!-- Display venture_capital start -->
       <dd><%= job_type.venture_capital %></dd>
-      <!-- Display venture_capital end -->
 
     </dl>
 
@@ -32,21 +24,17 @@
         <%= link_to_show_or_back job_type, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link job_type start -->
       <div class="col">
         <%= link_to edit_job_type_url(job_type), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link job_type end -->
 
-      <!-- Delete link job_type start -->
       <div class="col">
         <%= link_to job_type, method: :delete, data: { confirm: "Do you really want to delete this job_type?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link job_type end -->
     </div>
   </div>
 
