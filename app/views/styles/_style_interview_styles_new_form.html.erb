@@ -7,7 +7,7 @@
     <%= f.label :interview_id %>
 
     <!-- Input for interview_id start -->
-    <%= f.text_field :interview_id, class: "form-control" %>
+    <%= f.collection_select :interview_id, Interview.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for interview_id end -->
   </div>
   <!-- Label and input for interview_id end -->

@@ -16,7 +16,7 @@
 
     <%= f.label :interview_id %>
     <!-- Input for interview_id start -->
-    <%= f.number_field :interview_id, class: interview_class, placeholder: "Enter interview" %>
+    <%= f.collection_select :interview_id, Interview.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for interview_id end -->
     <% if interview_was_invalid %>
       <% interview_style.errors.full_messages_for(:interview).each do |message| %>
