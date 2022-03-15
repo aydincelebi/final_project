@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :application_websites
   resources :job_types
   resources :interviews
   resources :users
