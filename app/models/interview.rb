@@ -5,6 +5,8 @@ class Interview < ApplicationRecord
 
   # Validations
 
+  validates :take_home, :inclusion => { :in => [ "0", "1" ]  }
+
   # Scopes
 
   def to_s
