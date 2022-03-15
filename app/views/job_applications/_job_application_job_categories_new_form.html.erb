@@ -1,0 +1,32 @@
+<!-- Form job_category start -->
+<%= form_with(model: @job_category, local: true) do |f| %>
+<!-- Form job_category end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <%= f.label :category_id %>
+
+    <!-- Input for category_id start -->
+    <%= f.text_field :category_id, class: "form-control" %>
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <!-- Label and input for job_application_id start -->
+  <!-- Input for job_application_id start -->
+  <%= f.hidden_field :job_application_id, value: @job_application.id %>
+  <!-- Input for job_application_id end -->
+  <!-- Label and input for job_application_id end -->
+
+  <!-- Label and input for job_id start -->
+  <div class="form-group">
+    <%= f.label :job_id %>
+
+    <!-- Input for job_id start -->
+    <%= f.text_field :job_id, class: "form-control" %>
+    <!-- Input for job_id end -->
+  </div>
+  <!-- Label and input for job_id end -->
+
+  <%= f.submit "Create job category", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

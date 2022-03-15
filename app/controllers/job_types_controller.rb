@@ -8,6 +8,7 @@ class JobTypesController < ApplicationController
 
   # GET /job_types/1
   def show
+    @job_category = JobCategory.new
   end
 
   # GET /job_types/new

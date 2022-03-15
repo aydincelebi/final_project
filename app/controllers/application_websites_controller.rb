@@ -8,6 +8,7 @@ class ApplicationWebsitesController < ApplicationController
 
   # GET /application_websites/1
   def show
+    @job_application = JobApplication.new
   end
 
   # GET /application_websites/new

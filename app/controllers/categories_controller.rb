@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   def show
+    @job_category = JobCategory.new
   end
 
   # GET /categories/new

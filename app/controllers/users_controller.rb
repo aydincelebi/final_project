@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @job_application = JobApplication.new
   end
 
   # GET /users/new

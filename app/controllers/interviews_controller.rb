@@ -8,6 +8,7 @@ class InterviewsController < ApplicationController
 
   # GET /interviews/1
   def show
+    @interview_style = InterviewStyle.new
   end
 
   # GET /interviews/new
@@ -24,7 +25,12 @@ class InterviewsController < ApplicationController
     @interview = Interview.new(interview_params)
 
     if @interview.save
-      redirect_to @interview, notice: 'Interview was successfully created.'
+      message = 'Interview was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @interview, notice: message
+      end
     else
       render :new
     end

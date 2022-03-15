@@ -1,0 +1,22 @@
+<!-- Form interview_style start -->
+<%= form_with(model: @interview_style, local: true) do |f| %>
+<!-- Form interview_style end -->
+
+  <!-- Label and input for interview_id start -->
+  <div class="form-group">
+    <%= f.label :interview_id %>
+
+    <!-- Input for interview_id start -->
+    <%= f.text_field :interview_id, class: "form-control" %>
+    <!-- Input for interview_id end -->
+  </div>
+  <!-- Label and input for interview_id end -->
+
+  <!-- Label and input for style_id start -->
+  <!-- Input for style_id start -->
+  <%= f.hidden_field :style_id, value: @style.id %>
+  <!-- Input for style_id end -->
+  <!-- Label and input for style_id end -->
+
+  <%= f.submit "Create interview style", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

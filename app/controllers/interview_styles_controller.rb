@@ -24,7 +24,12 @@ class InterviewStylesController < ApplicationController
     @interview_style = InterviewStyle.new(interview_style_params)
 
     if @interview_style.save
-      redirect_to @interview_style, notice: 'Interview style was successfully created.'
+      message = 'InterviewStyle was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @interview_style, notice: message
+      end
     else
       render :new
     end

@@ -8,6 +8,7 @@ class StylesController < ApplicationController
 
   # GET /styles/1
   def show
+    @interview_style = InterviewStyle.new
   end
 
   # GET /styles/new

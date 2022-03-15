@@ -8,6 +8,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1
   def show
+    @job_application = JobApplication.new
   end
 
   # GET /companies/new

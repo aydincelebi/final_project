@@ -24,7 +24,12 @@ class JobCategoriesController < ApplicationController
     @job_category = JobCategory.new(job_category_params)
 
     if @job_category.save
-      redirect_to @job_category, notice: 'Job category was successfully created.'
+      message = 'JobCategory was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @job_category, notice: message
+      end
     else
       render :new
     end
