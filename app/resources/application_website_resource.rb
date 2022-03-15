@@ -7,6 +7,9 @@ class ApplicationWebsiteResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :job_applications,
+             foreign_key: :platform
+
   # Indirect associations
 
 end
