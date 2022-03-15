@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "companies#index"
   resources :styles
   resources :interview_styles
