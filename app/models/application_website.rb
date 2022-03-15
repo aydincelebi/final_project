@@ -1,6 +1,10 @@
 class ApplicationWebsite < ApplicationRecord
   # Direct associations
 
+  has_many   :job_applications,
+             :foreign_key => "platform",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
