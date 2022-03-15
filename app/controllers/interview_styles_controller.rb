@@ -42,8 +42,14 @@ class InterviewStylesController < ApplicationController
   # DELETE /interview_styles/1
   def destroy
     @interview_style.destroy
-    redirect_to interview_styles_url, notice: 'Interview style was successfully destroyed.'
+    message = "InterviewStyle was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to interview_styles_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

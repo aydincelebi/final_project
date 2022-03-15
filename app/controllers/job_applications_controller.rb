@@ -42,8 +42,14 @@ class JobApplicationsController < ApplicationController
   # DELETE /job_applications/1
   def destroy
     @job_application.destroy
-    redirect_to job_applications_url, notice: 'Job application was successfully destroyed.'
+    message = "JobApplication was successfully deleted."
+    if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+      redirect_back fallback_location: request.referrer, notice: message
+    else
+      redirect_to job_applications_url, notice: message
+    end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
