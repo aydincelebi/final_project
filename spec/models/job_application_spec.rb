@@ -29,10 +29,5 @@ RSpec.describe JobApplication, type: :model do
     it { should validate_presence_of(:name) }
 
     it { should validate_presence_of(:platform) }
-
-    it {
-      should validate_inclusion_of(:platform).in_array(["Kellogg Job Board",
-                                                        "Company Website"])
-    }
   end
 end
