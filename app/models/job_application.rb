@@ -32,14 +32,10 @@ class JobApplication < ApplicationRecord
 
   validates :interest_level, presence: true
 
-  validates :interest_level, numericality: { equal_to: 1 }
+  validates :interest_level,
+            numericality: { greater_than: 0, less_than_or_equal_to: 5 }
 
   validates :name, presence: true
-
-  validates :platform, presence: true
-
-  validates :platform,
-            inclusion: { in: ["Kellogg Job Board", "Company Website"] }
 
   # Scopes
 
