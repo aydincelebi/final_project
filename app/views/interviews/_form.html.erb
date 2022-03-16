@@ -46,50 +46,6 @@
     <% end %>
   </div>
   <div class="form-group">
-    <% resume_drop_class = "form-control" %>
-    <% resume_drop_was_invalid = interview.errors.include?(:resume_drop) %>
-
-    <% if was_validated %>
-      <% if resume_drop_was_invalid %>
-        <% resume_drop_class << " is-invalid" %>
-      <% else %>
-        <% resume_drop_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :resume_drop %>
-    <%= f.number_field :resume_drop, class: resume_drop_class, placeholder: "Enter resume drop" %>
-    <% if resume_drop_was_invalid %>
-      <% interview.errors.full_messages_for(:resume_drop).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
-    <% strategy_class = "form-control" %>
-    <% strategy_was_invalid = interview.errors.include?(:strategy) %>
-
-    <% if was_validated %>
-      <% if strategy_was_invalid %>
-        <% strategy_class << " is-invalid" %>
-      <% else %>
-        <% strategy_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :strategy %>
-    <%= f.text_field :strategy, class: strategy_class, placeholder: "Enter strategy" %>
-    <% if strategy_was_invalid %>
-      <% interview.errors.full_messages_for(:strategy).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
     <% take_home_class = "form-control" %>
     <% take_home_was_invalid = interview.errors.include?(:take_home) %>
 
