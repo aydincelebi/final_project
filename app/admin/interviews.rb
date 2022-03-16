@@ -1,6 +1,5 @@
 ActiveAdmin.register Interview do
-  permit_params :application_id, :interview_round, :resume_drop, :strategy,
-                :take_home, :status
+  permit_params :application_id, :interview_round, :take_home, :status
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

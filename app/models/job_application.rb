@@ -36,11 +36,6 @@ class JobApplication < ApplicationRecord
 
   validates :name, presence: true
 
-  validates :platform, presence: true
-
-  validates :platform,
-            inclusion: { in: ["Kellogg Job Board", "Company Website"] }
-
   # Scopes
 
   def to_s
