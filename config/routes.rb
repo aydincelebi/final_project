@@ -10,10 +10,6 @@ Rails.application.routes.draw do
 
       resources :categories
 
-      resources :application_websites
-
-      resources :job_types
-
       resources :interviews
 
       resources :users
@@ -31,8 +27,6 @@ Rails.application.routes.draw do
   resources :interview_styles
   resources :job_categories
   resources :categories
-  resources :application_websites
-  resources :job_types
   resources :interviews
   resources :users
   resources :job_applications

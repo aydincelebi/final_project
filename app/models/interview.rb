@@ -20,14 +20,10 @@ class Interview < ApplicationRecord
             inclusion: { in: ["Application", "1st Round", "2nd Round", "3rd Round",
                               "Final Round"] }
 
-  validates :resume_drop, inclusion: { in: ["0", "1"] }
-
   validates :status, presence: true
 
   validates :status,
             inclusion: { in: ["pending", "rejected", "passed"] }
-
-  validates :strategy, inclusion: { in: ["0", "1"] }
 
   validates :take_home, inclusion: { in: ["0", "1"] }
 
