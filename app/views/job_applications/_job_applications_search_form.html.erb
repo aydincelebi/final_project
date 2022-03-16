@@ -121,6 +121,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :platform_cont, "Platform contains" %>
+    <%= f.text_field :platform_cont, :class => "form-control", :placeholder => "Platform contains" %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :interest_level, "Interest level" %>
     <div class="row">
       <div class='col-md-6 mb-1'>
@@ -186,11 +191,6 @@
   <div class="form-group">
     <%= f.label :user_first_name_cont, "User first_name contains" %>
     <%= f.text_field :user_first_name_cont, :class => "form-control", :placeholder => "User first_name contains" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :jobwebsite_url_cont, "Jobwebsite url contains" %>
-    <%= f.text_field :jobwebsite_url_cont, :class => "form-control", :placeholder => "Jobwebsite url contains" %>
   </div>
 
   <div class="form-group">

@@ -22,11 +22,7 @@
       <dd><%= job_application.interest_level %></dd>
 
       <dt>Platform</dt>
-      <dd>
-        <% if @job_application.jobwebsite.present? %>
-          <%= link_to job_application.jobwebsite, job_application.jobwebsite %>
-        <% end %>
-      </dd>
+      <dd><%= job_application.platform %></dd>
 
       <dt>Networking</dt>
       <dd><%= job_application.networking %></dd>

@@ -5,7 +5,7 @@ class CreateJobApplications < ActiveRecord::Migration[6.0]
       t.text :description
       t.integer :company_id
       t.integer :interest_level
-      t.integer :platform
+      t.string :platform
       t.integer :networking
       t.text :comments
       t.date :applied_on
