@@ -102,7 +102,7 @@
     <% end %>
 
     <%= f.label :platform %>
-    <%= f.collection_select :platform, ApplicationWebsite.all, :id, :to_s, {}, class: "form-control" %>
+    <%= f.number_field :platform, class: platform_class, placeholder: "Enter platform" %>
     <% if platform_was_invalid %>
       <% job_application.errors.full_messages_for(:platform).each do |message| %>
         <div class="invalid-feedback d-flex">

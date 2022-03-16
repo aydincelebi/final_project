@@ -4,8 +4,6 @@ class InterviewResource < ApplicationResource
   attribute :updated_at, :datetime, writable: false
   attribute :application_id, :integer
   attribute :interview_round, :string
-  attribute :resume_drop, :integer
-  attribute :strategy, :string
   attribute :take_home, :integer
   attribute :status, :string
 
