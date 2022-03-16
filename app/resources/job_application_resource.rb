@@ -6,7 +6,7 @@ class JobApplicationResource < ApplicationResource
   attribute :description, :string
   attribute :company_id, :integer
   attribute :interest_level, :integer
-  attribute :platform, :integer
+  attribute :platform, :string
   attribute :networking, :integer
   attribute :comments, :string
   attribute :applied_on, :date
@@ -16,10 +16,6 @@ class JobApplicationResource < ApplicationResource
   attribute :url, :string
 
   # Direct associations
-
-  belongs_to :jobwebsite,
-             resource: ApplicationWebsiteResource,
-             foreign_key: :platform
 
   belongs_to :user
 

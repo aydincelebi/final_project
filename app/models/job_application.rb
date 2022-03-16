@@ -1,10 +1,6 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
-  belongs_to :jobwebsite,
-             class_name: "ApplicationWebsite",
-             foreign_key: "platform"
-
   belongs_to :user
 
   has_many   :job_categories,
