@@ -58,6 +58,6 @@ class InterviewsController < ApplicationController
 
   def interview_params
     params.require(:interview).permit(:application_id, :interview_round,
-                                      :take_home, :status)
+                                      :status)
   end
 end

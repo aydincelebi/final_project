@@ -23,9 +23,7 @@ class Interview < ApplicationRecord
   validates :status, presence: true
 
   validates :status,
-            inclusion: { in: ["pending", "rejected", "passed"] }
-
-  validates :take_home, inclusion: { in: ["0", "1"] }
+            inclusion: { in: ["Pending", "Rejected", "Passed"] }
 
   # Scopes
 
