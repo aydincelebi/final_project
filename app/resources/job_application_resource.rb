@@ -17,7 +17,7 @@ class JobApplicationResource < ApplicationResource
 
   # Direct associations
 
-  belongs_to :job_platform,
+  belongs_to :jobwebsite,
              resource: ApplicationWebsiteResource,
              foreign_key: :platform
 

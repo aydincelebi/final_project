@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   scope path: ApplicationResource.endpoint_namespace,
         defaults: { format: :jsonapi } do
     scope module: "api/v1", as: "api" do
+      resources :application_websites
+
       resources :styles
 
       resources :interview_styles
@@ -9,8 +11,6 @@ Rails.application.routes.draw do
       resources :job_categories
 
       resources :categories
-
-      resources :application_websites
 
       resources :interviews
 
@@ -25,11 +25,11 @@ Rails.application.routes.draw do
   end
   ActiveAdmin.routes(self)
   root to: "companies#index"
+  resources :application_websites
   resources :styles
   resources :interview_styles
   resources :job_categories
   resources :categories
-  resources :application_websites
   resources :interviews
   resources :users
   resources :job_applications

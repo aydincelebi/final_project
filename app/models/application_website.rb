@@ -12,6 +12,6 @@ class ApplicationWebsite < ApplicationRecord
   # Scopes
 
   def to_s
-    created_at
+    url
   end
 end

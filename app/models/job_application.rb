@@ -1,7 +1,7 @@
 class JobApplication < ApplicationRecord
   # Direct associations
 
-  belongs_to :job_platform,
+  belongs_to :jobwebsite,
              class_name: "ApplicationWebsite",
              foreign_key: "platform"
 
@@ -32,9 +32,17 @@ class JobApplication < ApplicationRecord
 
   validates :interest_level, presence: true
 
-  validates :interest_level, numericality: { equal_to: 1 }
+  validates :interest_level,
+            numericality: { less_than_or_equal_to: 5,
+                            greater_than_or_equal_to: 1 }
 
   validates :name, presence: true
+
+  validates :networking, presence: true
+
+  validates :networking,
+            numericality: { less_than_or_equal_to: 1,
+                            greater_than_or_equal_to: 0 }
 
   # Scopes
 
