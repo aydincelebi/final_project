@@ -46,28 +46,6 @@
     <% end %>
   </div>
   <div class="form-group">
-    <% take_home_class = "form-control" %>
-    <% take_home_was_invalid = interview.errors.include?(:take_home) %>
-
-    <% if was_validated %>
-      <% if take_home_was_invalid %>
-        <% take_home_class << " is-invalid" %>
-      <% else %>
-        <% take_home_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :take_home %>
-    <%= f.number_field :take_home, class: take_home_class, placeholder: "Enter take home" %>
-    <% if take_home_was_invalid %>
-      <% interview.errors.full_messages_for(:take_home).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
     <% status_class = "form-control" %>
     <% status_was_invalid = interview.errors.include?(:status) %>
 

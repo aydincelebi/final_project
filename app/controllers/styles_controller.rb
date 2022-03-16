@@ -47,7 +47,6 @@ class StylesController < ApplicationController
   end
 
   def style_params
-    params.require(:style).permit(:name, :resume_drop, :strategy, :take_home,
-                                  :product_case)
+    params.require(:style).permit(:name)
   end
 end

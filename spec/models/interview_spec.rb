@@ -20,10 +20,8 @@ RSpec.describe Interview, type: :model do
     it { should validate_presence_of(:status) }
 
     it {
-      should validate_inclusion_of(:status).in_array(["pending", "rejected",
-                                                      "passed"])
+      should validate_inclusion_of(:status).in_array(["Pending", "Rejected",
+                                                      "Passed"])
     }
-
-    it { should validate_inclusion_of(:take_home).in_array(["0", "1"]) }
   end
 end

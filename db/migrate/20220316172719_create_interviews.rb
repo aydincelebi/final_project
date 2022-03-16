@@ -3,7 +3,6 @@ class CreateInterviews < ActiveRecord::Migration[6.0]
     create_table :interviews do |t|
       t.integer :application_id
       t.string :interview_round
-      t.integer :take_home
       t.string :status
 
       t.timestamps
