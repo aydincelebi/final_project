@@ -2,28 +2,6 @@
 
 <%= form_with(model: application_website, local: true, novalidate: true, class: "mb-3") do |f| %>
   <div class="form-group">
-    <% name_class = "form-control" %>
-    <% name_was_invalid = application_website.errors.include?(:name) %>
-
-    <% if was_validated %>
-      <% if name_was_invalid %>
-        <% name_class << " is-invalid" %>
-      <% else %>
-        <% name_class << " is-valid" %>
-      <% end %>
-    <% end %>
-
-    <%= f.label :name %>
-    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
-    <% if name_was_invalid %>
-      <% application_website.errors.full_messages_for(:name).each do |message| %>
-        <div class="invalid-feedback d-flex">
-          <%= message %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
     <% url_class = "form-control" %>
     <% url_was_invalid = application_website.errors.include?(:url) %>
 
@@ -39,6 +17,28 @@
     <%= f.text_field :url, class: url_class, placeholder: "Enter url" %>
     <% if url_was_invalid %>
       <% application_website.errors.full_messages_for(:url).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <% name_class = "form-control" %>
+    <% name_was_invalid = application_website.errors.include?(:name) %>
+
+    <% if was_validated %>
+      <% if name_was_invalid %>
+        <% name_class << " is-invalid" %>
+      <% else %>
+        <% name_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: name_class, placeholder: "Enter name" %>
+    <% if name_was_invalid %>
+      <% application_website.errors.full_messages_for(:name).each do |message| %>
         <div class="invalid-feedback d-flex">
           <%= message %>
         </div>

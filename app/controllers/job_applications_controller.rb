@@ -4,7 +4,7 @@ class JobApplicationsController < ApplicationController
   def index
     @q = JobApplication.ransack(params[:q])
     @job_applications = @q.result(distinct: true).includes(:firm,
-                                                           :interviews, :job_categories, :user, :job_platform, :categories).page(params[:page]).per(10)
+                                                           :interviews, :job_categories, :user, :jobwebsite, :categories).page(params[:page]).per(10)
   end
 
   def show

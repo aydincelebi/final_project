@@ -50,6 +50,6 @@ class ApplicationWebsitesController < ApplicationController
   end
 
   def application_website_params
-    params.require(:application_website).permit(:name, :url)
+    params.require(:application_website).permit(:url, :name)
   end
 end
